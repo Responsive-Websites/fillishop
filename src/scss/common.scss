@@ -71,3 +71,84 @@
     }
   }
 }
+
+//Блок премьера
+.premiere-block {
+  &__container {
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__content {
+    display: block;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    @include adpv('padding-top', 1, 118, 50);
+    @include adpv('padding-bottom', 1, 80, 50);
+    @include adpv('padding-right', 1, 40, 34);
+    @include adpv('padding-left', 1, 40, 34);
+    color: $color-white;
+  }
+
+  &__title {
+    font-family: $fontSecond;
+    font-style: italic;
+    @include adpv('font-size', 1, 48, 30);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: math.div(45, 48);
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 12, 5);
+    }
+  }
+
+  &__interest {
+    @include adpv('font-size', 1, 32, 18);
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 16, 5);
+    }
+  }
+
+  &__text {
+    font-weight: 600;
+    @include adpv('font-size', 1, 32, 16);
+
+    &:not(:last-child) {
+      margin-bottom: rem(50);
+    }
+  }
+
+  &__made {
+  }
+
+  &__image {
+    filter: brightness(0.4);
+  }
+}
+
+.made-decor {
+  &__icon {
+  }
+
+  &__text {
+  }
+}
+
+.interest-banner {
+  font-family: $fontSecond;
+  color: $color-white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-style: italic;
+  padding: rem(6) rem(16);
+  background: linear-gradient(90deg, #306678 21.06%, #cf6e2b 90.9%);
+  border-radius: rem(5);
+  display: inline-block;
+  &_nobold {
+    font-weight: 400;
+  }
+}
