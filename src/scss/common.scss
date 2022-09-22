@@ -1,0 +1,73 @@
+//Выгодные предложения
+.offer-card {
+  display: block;
+  border-radius: rem(6);
+  background-color: $unload-color;
+
+  @include adpv('min-height', 1, 300, 212);
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+      -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.3);
+    }
+  }
+  &__content {
+    text-align: center;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+    z-index: 2;
+    @include adpv('padding-top', 1, 30, 20);
+    @include adpv('padding-bottom', 1, 70, 40);
+    @include adpv('padding-right', 1, 64, 20);
+    @include adpv('padding-left', 1, 64, 20);
+  }
+
+  &__title {
+    font-family: DIN2014;
+    text-align: center;
+    line-height: math.div(45, 32);
+    @include adpv('font-size', 1, 32, 20);
+    font-weight: 600;
+    font-style: italic;
+    color: $color-white;
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adpv('font-size', 1, 20, 14);
+    line-height: math.div(28, 20);
+    text-align: center;
+    color: $color-white;
+
+    span {
+      color: #ffde7d;
+      font-weight: 700;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+
+    @include adpv('right', 1, 35, 15);
+    @include adpv('bottom', 1, 35, 15);
+    z-index: 3;
+
+    &::before {
+      color: $color-white;
+      font-size: rem(18);
+    }
+  }
+}

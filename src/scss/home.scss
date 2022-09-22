@@ -1,0 +1,17 @@
+//home page styles
+
+.page {
+  &__offer-cards {
+  }
+}
+
+//offer-cards block
+.offer-cards {
+  &__inner {
+    display: grid;
+    @include adpv('gap', 1, 20, 10);
+    @media (min-width: $mobileSmall) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+    }
+  }
+}
