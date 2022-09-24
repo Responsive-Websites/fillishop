@@ -1,6 +1,62 @@
-//====================================================================================================
+.header {
+  &__top {
+  }
+}
+.top-header {
+  background: linear-gradient(-90deg, #306678 21.06%, #cf6e2b 90.9%);
 
-//====================================================================================================
+  &._close {
+    display: none;
+  }
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(40);
+    padding-top: rem(6);
+    padding-bottom: rem(6);
+  }
+
+  &__text {
+    color: #fadb99;
+    font-style: italic;
+    font-weight: 600;
+    @include adpv('font-size', 1, 18, 14);
+    font-family: $fontSecond;
+    line-height: math.div(25, 18);
+    text-transform: uppercase;
+  }
+  &__close {
+    flex: 0 0 rem(30);
+    width: rem(30);
+    height: rem(30);
+    background-color: transparent;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      background-color: $color-white;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      background-color: $color-white;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
 
 //Burger
 /*
