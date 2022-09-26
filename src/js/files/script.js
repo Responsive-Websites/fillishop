@@ -1,5 +1,4 @@
 // Подключение функционала "Чертогов Фрилансера"
-
 import { isMobile } from './functions.js';
 // Подключение списка активных модулей
 import { flsModules } from './modules.js';
@@ -29,37 +28,34 @@ export function searchInit() {
 }
 searchInit();
 
-// function bottomContentShowInit() {
-//   if (document.querySelector('.header__bottom-menu')) {
-//     let buttonsContent = document.querySelectorAll('.bottom-header__item');
-//     let itemsContent = document.querySelectorAll('.bottom-menu__item');
+function bottomContentShowInit() {
+  if (document.querySelector('.header__bottom-menu')) {
+    let buttonsContent = document.querySelectorAll('.bottom-header__item');
+    let itemsContent = document.querySelectorAll('.bottom-menu__item');
 
-//     if (buttonsContent && itemsContent) {
-//       // for (let index = 0; index < buttonsContent.length; index++) {
-//       //   buttonsContent[index].addEventListener('click', function (e) {
-//       //     let dataContentValue = e.target.dataset.content;
+    if (buttonsContent && itemsContent) {
+      document.addEventListener('click', (e) => {
+        let dataContentValue = e.target.dataset.content;
+        if (e.target.closest('.bottom-header__item')) {
+          itemsContent.forEach((item) => {
+            item.dataset.content == dataContentValue
+              ? item.classList.toggle('open-item')
+              : item.classList.remove('open-item');
+          });
+        } else if (!e.target.closest('.bottom-header__item') && !e.target.closest('.bottom-menu__item')) {
+          itemsContent.forEach((item) => {
+            if (item.classList.contains('open-item')) {
+              item.classList.remove('open-item');
+            }
+          });
+        }
+      });
+    }
+  }
+}
+bottomContentShowInit();
 
-//       //     itemsContent.forEach((item) => {
-//       //       item.dataset.content == dataContentValue
-//       //         ? item.classList.toggle('open-item')
-//       //         : item.classList.remove('open-item');
-//       //     });
-//       //   });
-//       // }
-
-//       document.addEventListener('click', (e) => {
-//         if (e.target.closest('.bottom-header__item')) {
-//           let dataContentValue = e.target.dataset.content;
-//           console.log('yes');
-
-//           itemsContent.forEach((item) => {
-//             item.dataset.content == dataContentValue
-//               ? item.classList.toggle('open-item')
-//               : item.classList.remove('open-item');
-//           });
-//         }
-//       });
-//     }
-//   }
-// }
-// bottomContentShowInit();
+document.querySelector('.menu__catalog-button').addEventListener('click', function (e) {
+  document.querySelector('.bottom-header__inner').classList.add('open-items');
+  document.documentElement.classList.add('lock');
+});

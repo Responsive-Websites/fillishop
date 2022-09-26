@@ -476,43 +476,116 @@
 }
 
 .bottom-header {
-  position: relative;
+  @media (min-width: $tablet) {
+    position: relative;
 
-  background-color: $color-white;
-  z-index: 2;
-  overflow: visible;
+    background-color: $color-white;
+    z-index: 2;
+  }
   &__container {
   }
 
   &__inner {
-    position: relative;
-    z-index: 2;
-    background-color: $color-white;
+    @media (max-width: em(1266)) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (min-width: $tablet) {
+      position: relative;
+      z-index: 2;
+      background-color: $color-white;
+      display: flex;
+      align-items: center;
+      @include adpv('column-gap', 1, 96, 40);
+    }
+    @media (max-width: $tablet) {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: $color-dark;
+      display: grid;
+      justify-items: center;
+      align-items: start;
+      align-content: start;
+      gap: rem(20);
+      z-index: 11;
+      transition: top 0.3s ease 0s;
+      padding: rem(70) rem(20);
+      &.open-items {
+        top: 0%;
+      }
+    }
   }
 
   &__item {
     &:focus {
       outline: none;
     }
+    font-weight: 600;
+    @include adpv('font-size', 1, 20, 14);
+    line-height: 140%;
+    font-family: $fontSecond;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    span {
+      opacity: 0.2;
+    }
+    padding: rem(20) rem(20);
+
+    &::before {
+      margin-left: rem(6);
+      font-size: rem(8);
+    }
+    &_sale {
+      &::before {
+        font-size: rem(19);
+        color: $color-orange;
+      }
+    }
+
+    @media (max-width: em(1266)) {
+      flex: 1 1 rem(380);
+      justify-content: center;
+      padding: rem(10) rem(0);
+      color: $color-white;
+      font-size: rem(14);
+    }
   }
 }
 
 .bottom-menu {
   &__item {
-    position: absolute;
-    top: 0%;
+    top: -100%;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 100%;
     background-color: $color-dark;
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease 0s;
     padding: rem(16) 0px;
+
+    position: fixed;
     &.open-item {
-      top: 100%;
+      top: 0%;
       visibility: visible;
       opacity: 1;
+    }
+    @media (min-width: $tablet) {
+      position: absolute;
+      height: auto;
+    }
+
+    @media (max-width: $tablet) {
+      z-index: 12;
+      overflow-y: auto;
+      padding: rem(70) rem(20);
     }
   }
 }
@@ -527,7 +600,12 @@
   &__list {
     display: grid;
     gap: rem(10);
-    grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(auto-fit, minmax(rem(300), 1fr));
+    }
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
   }
 
   &__item {
@@ -544,6 +622,12 @@
         color: $color-orange;
       }
     }
+
+    @media (max-width: $tablet) {
+      padding: rem(10) rem(6);
+
+      font-size: rem(20);
+    }
   }
 }
 
@@ -551,7 +635,20 @@
 .menu {
   &__icon {
   }
+  &__catalog-button {
+    font-size: rem(20);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: rem(20);
 
+    &::before {
+      font-size: rem(14);
+      margin-left: rem(10);
+    }
+  }
   &__body {
     position: fixed;
     z-index: 10;
@@ -564,6 +661,7 @@
     @media (min-width: $tablet) {
       display: none;
     }
+    text-align: center;
     transition: top 0.3s ease 0s;
     padding: rem(70) rem(20);
     &::before {
@@ -606,7 +704,7 @@
     width: rem(36);
     height: rem(28);
     cursor: pointer;
-    z-index: 5;
+    z-index: 12;
     span,
     &::before,
     &::after {
