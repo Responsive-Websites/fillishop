@@ -70,6 +70,7 @@
     "webpack-stream": "latest"
   },
   "dependencies": {
+    "request": "^2.79.0",
     "simplebar": "latest"
   }
 }
