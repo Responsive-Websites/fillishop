@@ -516,6 +516,17 @@
       padding: rem(70) rem(20);
       &.open-items {
         top: 0%;
+
+        &::before {
+          content: '';
+          position: fixed;
+          width: 100%;
+          height: rem(70);
+          background-color: $color-dark;
+          top: 0;
+          left: 0;
+          z-index: 12;
+        }
       }
     }
   }
@@ -541,11 +552,19 @@
     &::before {
       margin-left: rem(6);
       font-size: rem(8);
+      @media (max-width: $tablet) {
+        transform: rotate(-90deg) translate(rem(1), 0px);
+        font-size: rem(9);
+      }
     }
     &_sale {
       &::before {
         font-size: rem(19);
         color: $color-orange;
+
+        @media (max-width: $tablet) {
+          transform: rotate(0deg) translate(rem(0), 0px);
+        }
       }
     }
 
@@ -553,39 +572,124 @@
       flex: 1 1 rem(380);
       justify-content: center;
       padding: rem(10) rem(0);
-      color: $color-white;
+
       font-size: rem(14);
+    }
+    @media (max-width: $tablet) {
+      color: $color-white;
+    }
+  }
+
+  &__back {
+    display: flex;
+    position: fixed;
+    top: -100%;
+    right: rem(10);
+    z-index: 20;
+    font-size: rem(20);
+    align-items: center;
+    padding: rem(10);
+    color: $color-white;
+    &::before {
+      margin-right: rem(10);
+      transform: rotate(-180deg);
+      font-size: rem(12);
+    }
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    .open-items & {
+      visibility: visible;
+      opacity: 1;
+      top: rem(10);
+    }
+
+    @media (min-width: $tablet) {
+      display: none;
     }
   }
 }
 
 .bottom-menu {
   &__item {
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $color-dark;
-    visibility: hidden;
-    opacity: 0;
-    transition: all 0.3s ease 0s;
-    padding: rem(16) 0px;
-
-    position: fixed;
-    &.open-item {
-      top: 0%;
-      visibility: visible;
-      opacity: 1;
-    }
     @media (min-width: $tablet) {
       position: absolute;
       height: auto;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: auto;
+      background-color: $color-dark;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.3s ease 0s;
+      padding: rem(16) 0px;
+
+      &.open-item {
+        top: 100%;
+        visibility: visible;
+        opacity: 1;
+        @media (max-width: $tablet) {
+          top: 0;
+        }
+      }
     }
 
     @media (max-width: $tablet) {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background-color: $color-dark;
+      top: -100%;
+      left: 0;
       z-index: 12;
       overflow-y: auto;
+      transition: top 0.3s ease 0s;
       padding: rem(70) rem(20);
+      &.open-item {
+        top: 0%;
+
+        &::before {
+          content: '';
+          position: fixed;
+          width: 100%;
+          height: rem(70);
+          background-color: $color-dark;
+          top: 0;
+          left: 0;
+          z-index: 13;
+          transition: top 0.3s ease 0s;
+        }
+      }
+    }
+  }
+  &__back {
+    display: flex;
+    position: fixed;
+    top: -100%;
+    right: rem(10);
+    z-index: 20;
+    font-size: rem(20);
+    align-items: center;
+    padding: rem(10);
+    &::before {
+      margin-right: rem(10);
+      transform: rotate(-180deg);
+      font-size: rem(12);
+    }
+
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+    .open-item & {
+      visibility: visible;
+      opacity: 1;
+      top: rem(10);
+    }
+
+    @media (min-width: $tablet) {
+      display: none;
     }
   }
 }
@@ -634,6 +738,11 @@
 //menu in burger
 .menu {
   &__icon {
+  }
+  &__sub-list {
+    @media (min-width: $tablet) {
+      display: none;
+    }
   }
   &__catalog-button {
     font-size: rem(20);
@@ -686,7 +795,7 @@
     .menu-open & {
       position: fixed;
       top: rem(20);
-      z-index: 12;
+      z-index: 20;
     }
   }
 }
@@ -704,7 +813,7 @@
     width: rem(36);
     height: rem(28);
     cursor: pointer;
-    z-index: 12;
+    z-index: 20;
     span,
     &::before,
     &::after {
