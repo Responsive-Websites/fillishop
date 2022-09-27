@@ -497,6 +497,7 @@
       display: flex;
       align-items: center;
       @include adpv('column-gap', 1, 96, 40);
+      margin: 0px rem(-20);
     }
     @media (max-width: $tablet) {
       position: fixed;
