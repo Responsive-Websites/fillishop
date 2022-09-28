@@ -20,6 +20,12 @@
       @include adpv('margin-bottom', 1, 55, 45);
     }
   }
+
+  &__popular-products {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 52, 57);
+    }
+  }
 }
 
 //offer-cards block
@@ -29,6 +35,96 @@
     @include adpv('gap', 1, 20, 10);
     @media (min-width: $mobileSmall) {
       grid-template-columns: repeat(auto-fit, minmax(rem(400), 1fr));
+    }
+  }
+}
+
+//popular products block
+.popular-products {
+  &__container {
+  }
+
+  &__heading {
+    gap: rem(20);
+    display: flex;
+    @media (min-width: $tablet) {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      align-items: center;
+      gap: rem(10);
+    }
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 27, 22);
+    }
+  }
+
+  &__decor {
+    font-family: $fontSecond;
+    font-style: italic;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    @include adpv('font-size', 1, 40, 24);
+    color: #272727;
+    padding: rem(8) rem(16);
+    background: linear-gradient(270deg, #ffb887 19.77%, #ffde7d 90.82%);
+    border-radius: rem(5);
+    @media (max-width: $tablet) {
+      font-weight: 600;
+    }
+  }
+
+  &__title {
+    font-family: $fontSecond;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 140%;
+    text-transform: uppercase;
+    @include adpv('font-size', 1, 40, 24);
+    color: #272727;
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  &__slider {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 36, 19);
+    }
+  }
+
+  &__button-wrapper {
+    text-align: center;
+  }
+
+  &__button {
+  }
+}
+.button-more {
+  font-family: $fontSecond;
+  padding: rem(10) rem(20);
+  font-weight: 600;
+  font-size: rem(14);
+  line-height: 140%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #272727;
+  border: 1px solid #272727;
+  border-radius: rem(5);
+  background-color: $color-white;
+  transition: all 0.2s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: $color-white;
+      background-color: #272727;
+      color: $color-white;
     }
   }
 }
