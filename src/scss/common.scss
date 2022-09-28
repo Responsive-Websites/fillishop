@@ -734,6 +734,10 @@
     }
     @media (max-width: $mobile) {
       height: rem(46);
+
+      &::before {
+        height: rem(40);
+      }
     }
   }
 }
