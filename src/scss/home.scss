@@ -14,6 +14,12 @@
       @include adpv('margin-bottom', 1, 30, 10);
     }
   }
+
+  &__benefits {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 55, 45);
+    }
+  }
 }
 
 //offer-cards block
