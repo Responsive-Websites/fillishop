@@ -104,7 +104,7 @@
     font-weight: 600;
     line-height: math.div(45, 48);
     &:not(:last-child) {
-      @include adpv('margin-bottom', 1, 12, 5);
+      @include adpv('margin-bottom', 1, 12, 10);
     }
 
     span {
@@ -115,14 +115,14 @@
   &__interest {
     @include adpv('font-size', 1, 32, 18);
     &:not(:last-child) {
-      @include adpv('margin-bottom', 1, 16, 5);
+      @include adpv('margin-bottom', 1, 16, 10);
     }
   }
 
   &__text {
     font-weight: 600;
     @include adpv('font-size', 1, 32, 16);
-
+    font-style: italic;
     &:not(:last-child) {
       margin-bottom: rem(50);
     }

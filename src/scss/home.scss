@@ -9,6 +9,11 @@
   }
   &__offer-cards {
   }
+  &__premiere {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 30, 10);
+    }
+  }
 }
 
 //offer-cards block
