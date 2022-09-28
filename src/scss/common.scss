@@ -728,3 +728,35 @@
     }
   }
 }
+
+//preview banner styles
+
+.preview-banner {
+  @media (min-width: $pc) {
+    background: url('@img/preview-banner/1.png') center/rem(1524) no-repeat;
+  }
+  background: url('@img/preview-banner/1.png') top/133% no-repeat;
+
+  &__container {
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adpv('min-height', 1, 128, 90);
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $fontSecond;
+    font-style: italic;
+    font-weight: 700;
+
+    @include adpv('font-size', 1, 40, 20);
+    line-height: 140%;
+    text-transform: uppercase;
+    padding: rem(6) rem(0);
+    color: #1b1b1b;
+  }
+}
