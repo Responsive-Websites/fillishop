@@ -22,6 +22,7 @@
     align-items: center;
     position: relative;
     gap: 10px;
+    color: rgba(255, 255, 255, 0.61);
     &:before {
       content: '';
       align-self: flex-start;
@@ -34,5 +35,10 @@
   }
   // .checkbox__text
   &__text {
+  }
+  a {
+    color: rgba(255, 255, 255, 0.61);
+    text-decoration: underline;
+    margin-left: rem(3);
   }
 }
