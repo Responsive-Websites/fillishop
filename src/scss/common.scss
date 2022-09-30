@@ -904,22 +904,11 @@
 
 //product card styles
 
-.swiper-block {
-  &__slider {
-  }
-
-  &__wrapper {
-  }
-
-  &__slide {
-  }
-}
-
 .product-item {
   @include adpv('padding-top', 1, 48, 10);
   @include adpv('padding-bottom', 1, 23, 10);
-  @include adpv('padding-left', 1, 30, 18);
-  @include adpv('padding-right', 1, 30, 18);
+  @include adpv('padding-left', 1, 30, 14);
+  @include adpv('padding-right', 1, 30, 14);
   border: 1px solid #f2f2f2;
   &__inner {
   }
@@ -1048,6 +1037,14 @@
   }
 
   &__cart-button {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &__cart-button-second {
+    @media (min-width: $tablet) {
+      display: none;
+    }
   }
   &__watch-inner {
     display: flex;
@@ -1099,5 +1096,132 @@
   &::before {
     transition: color 0.2s ease 0s;
     @include adpv('font-size', 1, 22, 14);
+  }
+}
+
+//title styles
+
+.title-section {
+  font-family: $fontSecond;
+  font-style: italic;
+  font-weight: 700;
+
+  @include adpv('font-size', 1, 40, 24);
+  line-height: 140%;
+
+  text-transform: uppercase;
+  color: #272727;
+}
+
+//design card styles
+.design-cards {
+  display: grid;
+
+  @media (min-width: $mobile) {
+    grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+  }
+
+  @include adpv('gap', 1, 20, 10);
+  &__column {
+    display: grid;
+    @include adpv('gap', 1, 20, 10);
+  }
+}
+.design-card {
+  position: relative;
+  @include adpv('padding-left', 1, 74, 30);
+  @include adpv('padding-right', 1, 74, 60);
+
+  @include adpv('padding-bottom', 1, 74, 25);
+  padding-top: rem(30);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  @include adpv('min-height', 1, 346, 268);
+  border-radius: rem(5);
+  overflow: hidden;
+
+  transition: box-shadow 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+      -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+      box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+    }
+  }
+
+  &_big {
+    @media (min-width: $mobile) {
+      @include adpv('padding-left', 1, 100, 30);
+      @include adpv('padding-right', 1, 100, 60);
+
+      @include adpv('padding-bottom', 1, 110, 45, $maxWidthContainer, 767);
+      justify-content: center;
+      text-align: center;
+
+      .design-card__title {
+        padding-left: 0;
+        text-align: center;
+        line-height: 120%;
+      }
+    }
+  }
+  &::before {
+    @extend %ic;
+    content: '\e915';
+    position: absolute;
+    @include adpv('right', 1, 38, 30);
+    @include adpv('bottom', 1, 40, 28);
+
+    color: $color-white;
+
+    @include adpv('font-size', 1, 18, 15);
+  }
+  &__content {
+    color: $color-white;
+  }
+
+  &__title {
+    font-family: $fontSecond;
+    font-style: italic;
+    font-weight: 600;
+    @include adpv('font-size', 1, 32, 20);
+    line-height: 140%;
+    @include adpv('padding-left', 1, 16, 0);
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 0, 8);
+    }
+  }
+
+  &__title-decor {
+    font-family: $fontSecond;
+    font-style: italic;
+    font-weight: 600;
+    @include adpv('font-size', 1, 30, 18);
+
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 16, 12);
+    }
+
+    display: inline-block;
+
+    @include adpv('padding-left', 1, 16, 13);
+    @include adpv('padding-right', 1, 16, 13);
+    @include adpv('padding-top', 1, 9, 4);
+    @include adpv('padding-bottom', 1, 9, 4);
+
+    background: linear-gradient(90deg, #306678 21.06%, #cf6e2b 90.9%);
+    border-radius: rem(5);
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adpv('font-size', 1, 18, 14);
+    line-height: 160%;
+  }
+
+  &__image {
+    z-index: -1;
   }
 }

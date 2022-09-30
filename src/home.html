@@ -92,12 +92,24 @@
               <span class="popular-products__decor">топ-10</span>
               <h2 class="popular-products__title">популярных снарядов <span>FILIPPOV DYNASTY 2022</span></h2>
             </div>
+          </div>
+          <div class="popular-products__container popular-products__container_slider">
             <div class="popular-products__slider">@@include('html/_slider-block.htm',{})</div>
+          </div>
+          <div class="popular-products__container">
             <div class="popular-products__button-wrapper">
               <button class="popular-products__button button-more">На страницу рейтинга</button>
             </div>
           </div>
         </section>
+
+        <section class="page__design design-block">
+          <div class="design-block__container">
+            <h3 class="design-block__title title-section">Уникальный дизайн</h3>
+            <div class="design-block__cards">@@include('html/_design-card.htm',{})</div>
+          </div>
+        </section>
+
         <!-- <section class="page__offer-cards offer-cards">@@include('html/_offer-card.htm',{})</section> -->
       </main>
       @@include('html/_footer.htm',{})

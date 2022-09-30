@@ -26,6 +26,12 @@
       @include adpv('margin-bottom', 1, 52, 57);
     }
   }
+
+  &__design {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 64, 50);
+    }
+  }
 }
 
 //offer-cards block
@@ -42,6 +48,12 @@
 //popular products block
 .popular-products {
   &__container {
+    &_slider {
+      @media (max-width: $pc) {
+        max-width: none;
+        padding: 0px;
+      }
+    }
   }
 
   &__heading {
@@ -56,9 +68,8 @@
       align-items: center;
       gap: rem(10);
     }
-    &:not(:last-child) {
-      @include adpv('margin-bottom', 1, 27, 22);
-    }
+
+    @include adpv('margin-bottom', 1, 27, 22);
   }
 
   &__decor {
@@ -94,9 +105,7 @@
   }
 
   &__slider {
-    &:not(:last-child) {
-      @include adpv('margin-bottom', 1, 36, 19);
-    }
+    @include adpv('margin-bottom', 1, 36, 19);
   }
 
   &__button-wrapper {
@@ -126,5 +135,20 @@
       background-color: #272727;
       color: $color-white;
     }
+  }
+}
+
+//design block styles
+.design-block {
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 28, 20);
+    }
+  }
+
+  &__cards {
   }
 }
