@@ -32,6 +32,11 @@
       @include adpv('margin-bottom', 1, 64, 50);
     }
   }
+  &__series {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 56, 50);
+    }
+  }
 }
 
 //offer-cards block
@@ -150,5 +155,69 @@
   }
 
   &__cards {
+  }
+}
+
+//series block
+
+.series-block {
+  position: relative;
+  overflow: hidden;
+  padding-top: rem(25);
+  &::before {
+    content: '';
+    width: 100%;
+    height: rem(242);
+    top: 0;
+    left: 0;
+    background: url('@img/series-block/background.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    z-index: -1;
+  }
+  &__container {
+  }
+
+  &__inner {
+  }
+
+  &__title {
+    color: $color-white;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, mimax(rem(250), 1fr));
+  }
+
+  &__item {
+    @include adpv('min-height', 1, 178, 120);
+    position: relative;
+    display: block;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+
+      @include adpv('height', 1, 60, 40);
+      background: rgba(39, 39, 39, 0.6);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include adpv('left', 1, 33, 22);
+    @include adpv('bottom', 1, 18, 12);
+  }
+
+  &__image {
+    z-index: -1;
   }
 }

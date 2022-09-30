@@ -1111,6 +1111,10 @@
 
   text-transform: uppercase;
   color: #272727;
+
+  @media (max-width: $mobile) {
+    text-align: center;
+  }
 }
 
 //design card styles
