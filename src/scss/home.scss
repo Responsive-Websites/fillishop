@@ -188,11 +188,15 @@
   }
 
   &__content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, mimax(rem(250), 1fr));
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
+    flex: 1 1 rem(177);
+    @media (min-width: $mobileSmall) {
+      flex: 1 1 rem(220);
+    }
     @include adpv('min-height', 1, 178, 120);
     position: relative;
     display: block;
@@ -213,8 +217,42 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    @include adpv('left', 1, 33, 22);
-    @include adpv('bottom', 1, 18, 12);
+    @include adpv('left', 1, 33, 14);
+    @include adpv('bottom', 1, 16, 10);
+
+    &_5 {
+      width: rem(85);
+      height: rem(16);
+      @include adpv('bottom', 1, 20, 10);
+    }
+    @media (max-width: $mobile) {
+      &_1 {
+        width: rem(48);
+        height: rem(22);
+        @include adpv('bottom', 1, 16, 12);
+      }
+      &_2 {
+        width: rem(53);
+        height: rem(16);
+        @include adpv('bottom', 1, 16, 12);
+      }
+      &_3 {
+        width: rem(74);
+        height: rem(16);
+        @include adpv('bottom', 1, 16, 12);
+      }
+      &_4 {
+        width: rem(118);
+        height: rem(10);
+        @include adpv('bottom', 1, 16, 14);
+      }
+      &_5 {
+        width: rem(118);
+        height: rem(10);
+
+        @include adpv('bottom', 1, 16, 14);
+      }
+    }
   }
 
   &__image {
