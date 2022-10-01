@@ -30,9 +30,9 @@
     position: relative;
     z-index: 2;
     @include adpv('padding-top', 1, 30, 20);
-    @include adpv('padding-bottom', 1, 70, 40);
-    @include adpv('padding-right', 1, 64, 20);
-    @include adpv('padding-left', 1, 64, 20);
+    @include adpv('padding-bottom', 1, 30, 20);
+    @include adpv('padding-right', 1, 64, 40);
+    @include adpv('padding-left', 1, 64, 40);
   }
 
   &__title {
