@@ -2,6 +2,7 @@
   background-color: #0c131b;
 
   &__places {
+    @include adpv('padding-top', 1, 50, 14);
     &:not(:last-child) {
       @include adpv('margin-bottom', 1, 50, 30);
     }

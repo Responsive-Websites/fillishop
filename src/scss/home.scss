@@ -45,6 +45,8 @@
       @include adpv('margin-bottom', 1, 60, 42);
     }
   }
+  &__showroom {
+  }
 }
 
 //offer-cards block
@@ -170,7 +172,6 @@
 }
 
 //series block
-
 .series-block {
   position: relative;
   overflow: hidden;
@@ -272,7 +273,6 @@
 }
 
 //map block styles
-
 .map-main {
   &__container {
     &_mod {
@@ -372,5 +372,40 @@
         }
       }
     }
+  }
+}
+
+//showroom block styles
+
+.showroom-block {
+  &__container {
+    max-width: rem(1442);
+    padding: 0px;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+    @media (max-width: $tablet) {
+      text-align: center;
+    }
+    @media (max-width: em(1443)) {
+      padding: 0px rem(15);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 1 1 rem(160);
+    @include adpv('min-height', 1, 248, 148);
+    position: relative;
+  }
+
+  &__image {
   }
 }
