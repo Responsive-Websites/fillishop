@@ -40,6 +40,11 @@
       @include adpv('margin-bottom', 1, 56, 50);
     }
   }
+  &__map-main {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 60, 42);
+    }
+  }
 }
 
 //offer-cards block
@@ -263,5 +268,109 @@
 
   &__image {
     z-index: -1;
+  }
+}
+
+//map block styles
+
+.map-main {
+  &__container {
+    &_mod {
+      max-width: rem(1442);
+      padding: 0px;
+    }
+  }
+
+  &__heading {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 45, 20);
+    }
+
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $fontSecond;
+    color: #272727;
+  }
+
+  &__title {
+    font-weight: 700;
+    @include adpv('font-size', 1, 48, 24);
+    line-height: 100%;
+  }
+
+  &__sub-title {
+    font-weight: 600;
+    @include adpv('font-size', 1, 20, 14);
+    line-height: math.div(40, 20);
+  }
+
+  &__inner {
+    @media (min-width: $tablet) {
+      display: grid;
+      grid-template-columns: minmax(rem(300), rem(844)) minmax(rem(500), 1fr);
+    }
+    @media (max-width: $tablet) {
+      display: flex;
+      flex-flow: column-reverse nowrap;
+    }
+  }
+
+  &__map-block {
+    display: block;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    background: linear-gradient(90deg, #306678 21.06%, #bf722d 82.39%);
+
+    @media (min-width: em(1443)) {
+      border-radius: rem(0) rem(15) rem(15) rem(0);
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    @include adpv('gap', 1, 12, 10);
+    @include adpv('padding-bottom', 1, 68, 26);
+    @include adpv('padding-left', 1, 77, 40);
+    @include adpv('padding-right', 1, 77, 40);
+    @include adpv('padding-top', 1, 60, 26);
+  }
+
+  &__text {
+    font-family: $fontSecond;
+    font-weight: 600;
+    line-height: 160%;
+    @include adpv('font-size', 1, 20, 14);
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &__more {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    gap: rem(17);
+    font-weight: 500;
+    @include adpv('font-size', 1, 20, 14);
+    line-height: 160%;
+    color: #ffac72;
+
+    &::before {
+      font-size: rem(15);
+      transition: transform 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          transform: translate(rem(6), 0px);
+        }
+      }
+    }
   }
 }
