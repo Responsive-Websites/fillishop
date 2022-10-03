@@ -1,7 +1,9 @@
 //home page styles
 
 .page {
-  @include adpv('margin-top', 1, 65, 32);
+  &_home {
+    @include adpv('margin-top', 1, 65, 32);
+  }
   &__preview-banner {
     &:not(:last-child) {
       @include adpv('margin-bottom', 1, 58, 10);

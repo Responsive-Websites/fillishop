@@ -1,0 +1,129 @@
+.page {
+  &__breadcrumps {
+  }
+
+  &__catalog-menu {
+    padding-top: rem(32);
+    background-color: #e8f0f3;
+  }
+}
+
+.catalog-menu {
+  &__container {
+  }
+
+  &__inner {
+    display: grid;
+
+    @include adpv('gap', 1, 24, 12);
+    align-items: start;
+
+    @media (min-width: $tablet) {
+      grid-template-columns: minmax(rem(280), rem(390)) 1fr;
+    }
+  }
+
+  &__main-card {
+  }
+
+  &__sub-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(170), 1fr));
+    @include adpv('column-gap', 1, 24, 12);
+    @include adpv('row-gap', 1, 22, 12);
+  }
+  &__sub-card {
+  }
+}
+.main-card-menu {
+  position: relative;
+  display: block;
+  @include adpv('min-height', 1, 572, 462);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @include adpv('padding-bottom', 1, 42, 33);
+  @include adpv('padding-top', 1, 30, 20);
+  @include adpv('padding-left', 1, 30, 20);
+  @include adpv('padding-right', 1, 30, 20);
+  background-color: $color-white;
+  border-radius: rem(6);
+  overflow: hidden;
+  &__image {
+    object-fit: contain;
+  }
+
+  &__title {
+    position: relative;
+    text-align: center;
+
+    font-weight: 600;
+    line-height: 140%;
+
+    @include adpv('font-size', 1, 16, 14);
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #272727;
+
+    font-family: $fontSecond;
+
+    &::before {
+      content: '27';
+      position: absolute;
+      top: rem(-20);
+      right: rem(-6);
+      color: #f08235;
+    }
+  }
+}
+
+.sub-menu-card {
+  position: relative;
+  border-radius: rem(6);
+  overflow: hidden;
+  display: block;
+  display: flex;
+  align-items: flex-end;
+
+  @include adpv('padding-bottom', 1, 24, 18);
+  @include adpv('padding-top', 1, 24, 18);
+  @include adpv('padding-left', 1, 22, 19);
+  @include adpv('padding-right', 1, 22, 19);
+
+  @include adpv('min-height', 1, 275, 212);
+
+  &__content {
+    position: relative;
+
+    font-weight: 600;
+    font-size: rem(12);
+    text-transform: uppercase;
+    color: $color-white;
+  }
+
+  &__value {
+    &:not(:last-child) {
+      margin-bottom: rem(4);
+    }
+    line-height: 140%;
+    font-family: $fontSecond;
+
+    &_mod {
+      color: #f08235;
+    }
+  }
+
+  &__title {
+    line-height: 140%;
+    font-family: $fontSecond;
+
+    &_mod {
+      color: #272727;
+    }
+  }
+
+  &__image {
+  }
+}

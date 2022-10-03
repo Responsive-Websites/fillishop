@@ -1,3 +1,51 @@
+//breadcrumps styles
+.breadcrumps-block {
+  background-color: #0c131b;
+  padding: rem(8) 0px;
+  &__container {
+  }
+
+  &__inner {
+    overflow-x: auto;
+    font-size: 13px;
+    color: $color-white;
+    display: flex;
+    column-gap: rem(30);
+  }
+
+  &__past {
+    line-height: 140%;
+    white-space: nowrap;
+    position: relative;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: rem(-14);
+      top: 50%;
+
+      transform: translate(0px, -50%);
+
+      width: rem(4);
+      height: rem(4);
+      border-radius: 50%;
+      background-color: $color-white;
+    }
+  }
+
+  &__active {
+    line-height: 140%;
+    color: #a8a8a8;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+}
+
 //Выгодные предложения
 .offer-card {
   display: block;
