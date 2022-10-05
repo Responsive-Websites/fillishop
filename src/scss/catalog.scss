@@ -18,6 +18,16 @@
       @include adpv('margin-bottom', 1, 84, 34);
     }
   }
+  &__catalog-series {
+    &:not(:last-child) {
+      margin-bottom: rem(36);
+    }
+  }
+  &__catalog-slider {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 38, 50);
+    }
+  }
 }
 
 //catalog menu styles
@@ -514,5 +524,45 @@
         border: none;
       }
     }
+  }
+}
+
+// catalog slider styles
+
+.catalog-slider {
+  &__heading {
+    @include adpv('margin-bottom', 1, 25, 22);
+    display: flex;
+    align-items: center;
+    @include adpv('gap', 1, 20, 8);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
+
+  &__container {
+  }
+  &__title-decor {
+    transform: translate(0px, -2px);
+  }
+  &__title {
+    font-family: $fontSecond;
+    font-style: italic;
+    font-weight: 700;
+    @include adpv('font-size', 1, 40, 20);
+    line-height: 120%;
+    text-transform: uppercase;
+
+    color: #272727;
+
+    @media (max-width: $mobile) {
+      text-align: center;
+    }
+  }
+
+  &__slider {
   }
 }
