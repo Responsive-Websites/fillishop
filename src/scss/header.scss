@@ -626,7 +626,7 @@
       opacity: 0;
       transition: all 0.3s ease 0s;
       padding: rem(16) 0px;
-
+      z-index: 1;
       &.open-item {
         top: 100%;
         visibility: visible;
