@@ -28,6 +28,9 @@
       @include adpv('margin-bottom', 1, 38, 50);
     }
   }
+  &__reviews {
+    @include adpv('padding-bottom', 1, 65, 35);
+  }
 }
 
 //catalog menu styles
@@ -528,7 +531,6 @@
 }
 
 // catalog slider styles
-
 .catalog-slider {
   &__heading {
     @include adpv('margin-bottom', 1, 25, 22);
