@@ -89,14 +89,16 @@ document.addEventListener('click', function (e) {
 const pointsShowButton = document.querySelector('.catalog-points__show-button');
 const pointsButtons = document.querySelectorAll('.catalog-points__item');
 
-pointsShowButton.addEventListener('click', function () {
-  pointsButtons.forEach((item) => {
-    if (!item.classList.contains('_active') && !item.classList.contains('_close')) {
-      item.classList.add('_close');
-      pointsShowButton.innerHTML = 'Показать всё';
-    } else if (item.classList.contains('_close') && !item.classList.contains('_active')) {
-      item.classList.remove('_close');
-      pointsShowButton.innerHTML = 'Cвернуть всё';
-    }
+if (pointsShowButton && pointsButtons) {
+  pointsShowButton.addEventListener('click', function () {
+    pointsButtons.forEach((item) => {
+      if (!item.classList.contains('_active') && !item.classList.contains('_close')) {
+        item.classList.add('_close');
+        pointsShowButton.innerHTML = 'Показать всё';
+      } else if (item.classList.contains('_close') && !item.classList.contains('_active')) {
+        item.classList.remove('_close');
+        pointsShowButton.innerHTML = 'Cвернуть всё';
+      }
+    });
   });
-});
+}

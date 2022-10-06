@@ -926,8 +926,36 @@
             <div class="catalog-slider__container">@@include('html/_slider-block.htm',{})</div>
           </div>
         </div>
-
         <section class="page__reviews">@@include('html/_reviews-block.htm',{})</section>
+        <section class="page__request-call request-call">
+          <div class="request-call__container">
+            <div class="request-call__inner">
+              <h3 class="request-call__title">заказать консультацию менеджера</h3>
+              <form action="#" class="request-call__form-call">
+                <div class="request-call__countries">
+                  <div class="request-call__active-country _icon-arrow-spoiler-bottom">
+                    <img src="@img/catalog/request-call/1.svg" alt="Russia" />
+                  </div>
+                  <ul class="request-call__country-list">
+                    <li class="request-call__country-item">
+                      <img src="@img/catalog/request-call/1.svg" alt="" />
+                    </li>
+                    <li class="request-call__country-item">
+                      <img src="@img/catalog/request-call/1.svg" alt="" />
+                    </li>
+                    <li class="request-call__country-item">
+                      <img src="@img/catalog/request-call/1.svg" alt="" />
+                    </li>
+                  </ul>
+                </div>
+                <input type="text" class="request-call__input" />
+                <button class="request-call__send send-button send-button_mod">
+                  <span>Заказать звонок</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
       </main>
       @@include('html/_footer.htm',{})
     </div>
