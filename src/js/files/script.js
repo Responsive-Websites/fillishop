@@ -3,6 +3,7 @@ import { isMobile } from './functions.js';
 // Подключение списка активных модулей
 import { flsModules } from './modules.js';
 
+import IMask from 'imask';
 document.querySelector('.top-header__close').addEventListener('click', function (e) {
   document.querySelector('.header__top').classList.add('_close');
 });
@@ -100,5 +101,38 @@ if (pointsShowButton && pointsButtons) {
         pointsShowButton.innerHTML = 'Cвернуть всё';
       }
     });
+  });
+}
+
+//phone mask
+let phoneElement = document.querySelector('.request-call__input');
+if (phoneElement) {
+  let maskOptions = {
+    mask: '+{7}(000) 000 0000',
+    lazy: false,
+  };
+  IMask(phoneElement, maskOptions);
+}
+
+let activeCountry = document.querySelector('.request-call__active-country');
+let listCountry = document.querySelector('.request-call__country-list');
+
+if (activeCountry && listCountry) {
+  document.addEventListener('click', (e) => {
+    let target = e.target;
+
+    if (target.closest('.request-call__active-country') && activeCountry.classList.contains('_active')) {
+      listCountry.classList.remove('_active');
+      activeCountry.classList.remove('_active');
+    } else if (target.closest('.request-call__active-country')) {
+      listCountry.classList.add('_active');
+      activeCountry.classList.add('_active');
+    } else if (target.closest('.request-call__country-item')) {
+      listCountry.classList.remove('_active');
+      activeCountry.classList.remove('_active');
+    } else {
+      listCountry.classList.remove('_active');
+      activeCountry.classList.remove('_active');
+    }
   });
 }
