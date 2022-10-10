@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Главная" })
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main class="page">
+        <div class="page__breadcrumps">@@include('html/_breadcrumps.htm',{})</div>
+        <div class="page__product-block product-block">
+          <div class="product-block__container">
+            <div class="product-block__inner">
+              <div class="product-block__column product-block__column_first">
+                <div class="product-block__preview preview-product">
+                  <div class="preview-block__wrapper">
+                    <div class="preview-block__thumbs">
+                      <div class="preview-block__images-thumbs swiper">
+                        <div class="preview-block__images-thumbs-wrapper swiper-wrapper">
+                          <div class="preview-block__images-thumbs-slide swiper-slide">
+                            <img src="@img/product-page/preview/2.jpg" alt="image" />
+                          </div>
+                          <div class="preview-block__images-thumbs-slide swiper-slide">
+                            <img src="@img/product-page/preview/1.jpg" alt="image" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="preview-block__videos-thumbs swiper">
+                        <div class="preview-block__videos-thumbs-wrapper swiper-wrapper">
+                          <div class="preview-block__videos-thumbs-slide swiper-slide">
+                            <img src="@img/product-page/preview/3.jpg" alt="image" />
+                          </div>
+                          <div class="preview-block__videos-thumbs-slide swiper-slide">
+                            <img src="@img/product-page/preview/3.jpg" alt="image" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="preview-block__preview-image">
+                      <div class="preview-block__preview-image-slider swiper">
+                        <div class="preview-block__preview-image-wrapper swiper-wrapper">
+                          <div class="preview-block__preview-image-slide swiper-slide">
+                            <img src="@img/product-page/preview/1.jpg" alt="image" />
+                          </div>
+                          <div class="preview-block__preview-image-slide swiper-slide">
+                            <img src="@img/product-page/preview/1.jpg" alt="image" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="preview-block__more"></div>
+                </div>
+                <div class="product-block__banners"></div>
+              </div>
+              <div class="product-block__column product-block__column_second">
+                <div class="product-block__product-info"></div>
+                <div class="product-block__product-banners"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+  </body>
+</html>
