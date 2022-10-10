@@ -136,3 +136,13 @@ if (activeCountry && listCountry) {
     }
   });
 }
+
+let catalogOpenButton = document.querySelector('.catalog-menu__open-button');
+let catalogOpen = document.querySelector('.catalog-menu__inner');
+
+if (catalogOpenButton && catalogOpen) {
+  catalogOpenButton.addEventListener('click', (e) => {
+    catalogOpen.classList.add('_active');
+    catalogOpenButton.classList.add('_closed');
+  });
+}

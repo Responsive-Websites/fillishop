@@ -57,8 +57,45 @@
     @media (min-width: $tablet) {
       grid-template-columns: minmax(rem(280), rem(390)) 1fr;
     }
-  }
+    @media (max-width: $mobile) {
+      overflow: hidden;
+      height: rem(686);
+      position: relative;
 
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: rem(-56);
+        left: 50%;
+        width: 200vw;
+        height: rem(140);
+        background-color: #e8f0f3;
+        filter: blur(25px);
+        transform: translate(-50%, 0);
+      }
+      &._active {
+        height: auto;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  &__open-button {
+    position: absolute;
+    bottom: rem(00);
+    left: 50%;
+    z-index: 1;
+
+    transform: translate(-50%, 0px);
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+    &._closed {
+      display: none;
+    }
+  }
   &__main-card {
   }
 
@@ -184,6 +221,8 @@
 
 //catalog points styles
 .catalog-points {
+  background-color: #e8f0f3;
+
   &__container {
   }
 
