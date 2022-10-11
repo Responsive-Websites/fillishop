@@ -102,16 +102,17 @@ function initSliders() {
       // События
       on: {},
     });
-    new Swiper('.preview-block__preview-image-slider', {
+
+    new Swiper('.thumbs-images__slider ', {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
       modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 0,
-
+      direction: 'vertical',
       //touchRatio: 0,
       //simulateTouch: false,
       //loop: true,
@@ -170,14 +171,15 @@ function initSliders() {
       // События
       on: {},
     });
-    new Swiper('.preview-block__images-thumbs', {
+
+    new Swiper('.test__slider ', {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
       modules: [Navigation, Autoplay],
       observer: true,
       observeParents: true,
-      slidesPerView: 1,
+      slidesPerView: 2,
       spaceBetween: 0,
       direction: 'vertical',
       //touchRatio: 0,
