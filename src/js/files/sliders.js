@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Navigation, Autoplay } from 'swiper';
+import Swiper, { Navigation, Autoplay, Thumbs } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -103,16 +103,85 @@ function initSliders() {
       on: {},
     });
 
-    new Swiper('.thumbs-images__slider ', {
+    const productTbumbs = new Swiper('.thumbs-images__slider ', {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
-      modules: [Navigation, Autoplay],
+      modules: [Navigation, Autoplay, Thumbs],
       observer: true,
       observeParents: true,
       slidesPerView: 2,
-      spaceBetween: 0,
+      spaceBetween: 11,
       direction: 'vertical',
+      //touchRatio: 0,
+      //simulateTouch: false,
+      //loop: true,
+      //preloadImages: false,
+      //lazy: true,
+
+      /*
+			// Эффекты
+			effect: 'fade',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+			*/
+
+      // Пагинация
+      /*
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			*/
+
+      // Скроллбар
+      /*
+			scrollbar: {
+				el: '.swiper-scrollbar',
+				draggable: true,
+			},
+			*/
+
+      navigation: {
+        prevEl: '.thumbs-images__slider-next',
+        nextEl: '.thumbs-images__slider-prev',
+      },
+
+      // Брейкпоинты
+
+      // breakpoints: {
+      //   320: {
+      //     slidesPerView: 1,
+      //   },
+      //   390: {
+      //     slidesPerView: 2,
+      //   },
+
+      //   992: {
+      //     slidesPerView: 3,
+      //   },
+      //   1268: {
+      //     slidesPerView: 4,
+      //   },
+      // },
+
+      // События
+      on: {},
+    });
+    const productPreviewSlider = new Swiper('.main-preview__slider ', {
+      // Указываем скласс нужного слайдера
+      // Подключаем модули слайдера
+      // для конкретного случая
+      modules: [Navigation, Autoplay, Thumbs],
+      observer: true,
+      observeParents: true,
+      slidesPerView: 1,
+      spaceBetween: 14,
+      thumbs: {
+        swiper: productTbumbs,
+      },
       //touchRatio: 0,
       //simulateTouch: false,
       //loop: true,
@@ -171,8 +240,7 @@ function initSliders() {
       // События
       on: {},
     });
-
-    new Swiper('.test__slider ', {
+    new Swiper('.thumbs-videos__slider ', {
       // Указываем скласс нужного слайдера
       // Подключаем модули слайдера
       // для конкретного случая
@@ -180,7 +248,7 @@ function initSliders() {
       observer: true,
       observeParents: true,
       slidesPerView: 2,
-      spaceBetween: 0,
+      spaceBetween: 14,
       direction: 'vertical',
       //touchRatio: 0,
       //simulateTouch: false,
@@ -213,11 +281,10 @@ function initSliders() {
 			},
 			*/
 
-      // Кнопки "влево/вправо"
-      // navigation: {
-      //   prevEl: '.swiper-button-prev',
-      //   nextEl: '.swiper-button-next',
-      // },
+      navigation: {
+        prevEl: '.thumbs-videos__slider-next ',
+        nextEl: '.thumbs-videos__slider-prev',
+      },
 
       // Брейкпоинты
 
