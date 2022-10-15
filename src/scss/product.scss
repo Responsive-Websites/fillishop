@@ -6,7 +6,11 @@
 .product-block {
   &__container {
   }
-
+  &__info-mod {
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
   &__inner {
     display: grid;
 
@@ -33,6 +37,12 @@
     }
     &:not(:last-child) {
       @include adpv('margin-bottom', 1, 126, 30);
+
+      @media (max-width: $tablet) {
+        &:not(:last-child) {
+          margin-bottom: rem(30);
+        }
+      }
     }
   }
 
@@ -89,11 +99,25 @@
   &__heading {
     &:not(:last-child) {
       margin-bottom: rem(12);
+
+      @media (max-width: $tablet) {
+        margin-bottom: rem(20);
+      }
     }
   }
   &__info {
     &:not(:last-child) {
       margin-bottom: rem(12);
+    }
+  }
+  &__colors {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 30, 12);
+    }
+  }
+  &__sizes {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 26, 12);
     }
   }
 }
@@ -590,12 +614,19 @@
 //product heading
 
 .heading-product {
+  @media (max-width: $tablet) {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
   &__info {
     display: flex;
     align-items: center;
     gap: rem(20);
     &:not(:last-child) {
-      margin-bottom: rem(12);
+      @media (min-width: $tablet) {
+        margin-bottom: rem(12);
+      }
     }
   }
 
@@ -629,6 +660,12 @@
     text-transform: uppercase;
 
     color: #272727;
+
+    @media (max-width: $tablet) {
+      text-align: center;
+
+      margin-bottom: rem(9);
+    }
   }
 }
 
@@ -640,7 +677,15 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: rem(10);
-  max-width: rem(422);
+  max-width: rem(402);
+
+  @media (max-width: $tablet) {
+    max-width: none;
+  }
+  @media (max-width: $mobileSmall) {
+    margin: 0px rem(-15);
+    border-radius: rem(0);
+  }
   &__column {
     display: flex;
     flex-direction: column;
@@ -739,8 +784,9 @@
     border-radius: rem(2);
     display: flex;
     align-items: center;
-    padding: rem(2) rem(10);
+    padding: rem(2) rem(5);
     gap: rem(10);
+    justify-content: space-between;
   }
 
   &__payment-column {
@@ -757,5 +803,140 @@
     line-height: 140%;
     white-space: nowrap;
     color: #306678;
+  }
+}
+
+.info-colors {
+  &__title {
+    font-family: $fontSecond;
+
+    font-weight: 700;
+    font-size: rem(12);
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #272727;
+    &:not(:last-child) {
+      margin-bottom: rem(8);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+
+  &__color {
+    width: rem(40);
+    height: rem(26);
+    &:first-child {
+      background: #3450e4;
+      border-radius: rem(2) 0px 0px rem(2);
+
+      position: relative;
+
+      &::before {
+        @extend %ic;
+        content: '\e90e';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color-white;
+      }
+    }
+    &:nth-child(2) {
+      background: #ff0011;
+    }
+    &:nth-child(3) {
+      background: #000000;
+    }
+    &:nth-child(4) {
+      background: #7d7777;
+    }
+    &:last-child {
+      border: 1px solid #e5e5e5;
+      border-radius: 0px 2px 2px 0px;
+    }
+  }
+}
+
+.product-sizes {
+  max-width: rem(402);
+
+  @media (max-width: $tablet) {
+    max-width: none;
+  }
+  &__title {
+    font-family: $fontSecond;
+    font-weight: 700;
+    font-size: rem(12);
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #272727;
+
+    &:not(:last-child) {
+      margin-bottom: rem(9);
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: rem(5);
+    &:not(:last-child) {
+      margin-bottom: rem(9);
+    }
+  }
+
+  &__item {
+    border: 1px dashed #e5e5e5;
+    border-radius: rem(5);
+    padding: rem(6) rem(14);
+
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+    &_active {
+      background: #306678;
+      border: none;
+      padding: rem(8) rem(14);
+      & .product-sizes__icon {
+        opacity: 1;
+      }
+      & .product-sizes__value {
+        color: $color-white;
+      }
+      & .product-sizes__price {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__icon {
+    opacity: 0;
+    color: #ffb887;
+    &::before {
+      font-size: rem(10);
+    }
+  }
+
+  &__value {
+    flex: 1 1 auto;
+    font-size: rem(14);
+    line-height: 140%;
+    color: #000000;
+  }
+
+  &__price {
+    font-family: $fontSecond;
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: 140%;
+    color: #272727;
+  }
+  &__all {
+    font-size: rem(14);
+    line-height: 140%;
+
+    color: #818181;
   }
 }

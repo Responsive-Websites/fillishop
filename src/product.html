@@ -9,7 +9,7 @@
         <div class="page__product-block product-block">
           <div class="product-block__container">
             <div class="product-block__inner">
-              <div class="product-block__column">
+              <div class="product-block__column product-block__column_mod">
                 <div class="product-block__preview preview-product">
                   <div class="preview-product__thumbs">
                     <div class="preview-product__thumbs-images thumbs-images">
@@ -108,6 +108,7 @@
                     ><span>Показать похожие</span></a
                   >
                 </div>
+                <div class="product-block__info-mod"></div>
                 <div class="product-block__banner-discound discount-banner">
                   <div class="discount-banner__inner">
                     <h4 class="discount-banner__title">
@@ -179,7 +180,10 @@
                 </div>
               </div>
               <div class="product-block__column">
-                <div class="product-block__heading heading-product">
+                <div
+                  data-da=".product-block__column_mod, 991, first"
+                  class="product-block__heading heading-product"
+                >
                   <div class="heading-product__info">
                     <p class="heading-product__article">Артикул: 4958594</p>
                     <p class="heading-product__instock _icon-ok">
@@ -188,7 +192,7 @@
                   </div>
                   <h3 class="heading-product__title">Напольный боксерский мешок onePRO FILIPPOV Ø37</h3>
                 </div>
-                <div class="product-block__info info-product">
+                <div data-da=".product-block__info-mod, 991, first" class="product-block__info info-product">
                   <div class="info-product__column">
                     <div class="info-product__rating">
                       <div class="rating">
@@ -231,6 +235,43 @@
                       <img src="@img/product-page/preview/icon-price.svg" alt="icon" />
                     </div>
                   </div>
+                </div>
+                <div data-da=".product-block__info-mod, 991, 0" class="product-block__colors info-colors">
+                  <h4 class="info-colors__title">Цвета</h4>
+                  <div class="info-colors__inner">
+                    <button class="info-colors__color"></button>
+                    <button class="info-colors__color"></button>
+                    <button class="info-colors__color"></button>
+                    <button class="info-colors__color"></button>
+                    <button class="info-colors__color"></button>
+                  </div>
+                </div>
+                <div data-da=".product-block__info-mod, 991, 1" class="product-block__sizes product-sizes">
+                  <h4 class="product-sizes__title">Размеры</h4>
+                  <div class="product-sizes__inner">
+                    <div class="product-sizes__item">
+                      <div class="product-sizes__icon _icon-star"></div>
+                      <div class="product-sizes__value">
+                        <span>140 см / 37 см / 60 кг</span>
+                      </div>
+                      <span class="product-sizes__price">29 190 ₽</span>
+                    </div>
+                    <div class="product-sizes__item product-sizes__item_active">
+                      <div class="product-sizes__icon _icon-star"></div>
+                      <div class="product-sizes__value">
+                        <span>140 см / 37 см / 60 кг</span>
+                      </div>
+                      <span class="product-sizes__price">29 190 ₽</span>
+                    </div>
+                    <div class="product-sizes__item">
+                      <div class="product-sizes__icon _icon-star"></div>
+                      <div class="product-sizes__value">
+                        <span>140 см / 37 см / 60 кг</span>
+                      </div>
+                      <span class="product-sizes__price">29 190 ₽</span>
+                    </div>
+                  </div>
+                  <a href="#" class="product-sizes__all">Все размеры</a>
                 </div>
               </div>
             </div>
