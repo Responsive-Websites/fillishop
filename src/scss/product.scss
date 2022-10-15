@@ -120,6 +120,11 @@
       @include adpv('margin-bottom', 1, 26, 12);
     }
   }
+  &__buy {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 22, 12);
+    }
+  }
 }
 
 // preview block
@@ -938,5 +943,155 @@
     line-height: 140%;
 
     color: #818181;
+  }
+}
+
+.buy-product {
+  max-width: rem(402);
+  @media (max-width: $tablet) {
+    max-width: none;
+  }
+
+  &__to-cart {
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+  }
+
+  &__cart-link {
+    padding: rem(20) rem(26);
+    display: flex;
+    align-items: center;
+    background: #e8f0f3;
+    border-radius: rem(9);
+    justify-content: space-between;
+    gap: rem(10);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: calc(100% - rem(10));
+      height: calc(100% - rem(10));
+      background: #306678;
+      border-radius: rem(5);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    span {
+      font-family: $fontSecond;
+      font-weight: 700;
+      font-size: rem(16);
+      line-height: 140%;
+      text-transform: uppercase;
+      color: $color-white;
+      transform: translate(rem(0), rem(2));
+    }
+    img {
+      position: relative;
+    }
+  }
+
+  &__actions {
+    &:not(:last-child) {
+      margin-bottom: rem(12);
+    }
+    display: flex;
+    align-items: center;
+    gap: rem(26);
+    justify-content: space-between;
+  }
+
+  &__one-click {
+    flex: 0 1 rem(270);
+    display: flex;
+    gap: rem(10);
+
+    padding: rem(13) rem(26);
+    border: 1px solid #000000;
+    border-radius: rem(5);
+
+    @media (max-width: $mobile) {
+      flex: 1 1 auto;
+    }
+    span {
+      flex: 1 1 auto;
+      font-family: $fontSecond;
+
+      font-weight: 600;
+      font-size: rem(16);
+      line-height: 140%;
+
+      text-transform: uppercase;
+
+      color: #272727;
+      transform: translate(rem(0), rem(2));
+      @media (max-width: em(382)) {
+        font-size: rem(12);
+        transform: translate(rem(0), rem(0));
+      }
+    }
+
+    @media (max-width: em(382)) {
+      padding: rem(13) rem(10);
+    }
+  }
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+  }
+  &__like {
+    height: rem(50);
+    width: rem(50);
+    background: rgba(255, 223, 197, 0.66);
+    border-radius: rem(5);
+  }
+
+  &__share {
+    height: rem(48);
+    width: rem(48);
+    border: 1px solid #000000;
+    border-radius: 5px;
+  }
+
+  &__questions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(10);
+  }
+
+  &__question {
+    font-size: rem(14);
+    line-height: 140%;
+
+    color: #818181;
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__ask {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+
+    font-size: rem(14);
+    line-height: 140%;
+
+    color: #818181;
+
+    a {
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
