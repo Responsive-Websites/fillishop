@@ -641,9 +641,22 @@
       background: linear-gradient(270deg, #ffb887 19.77%, #ffde7d 90.82%);
       box-shadow: 0px 0px 9px rgba(249, 123, 21, 0.66);
       border-radius: rem(5);
+      transition: filter 0.3s ease 0s;
     }
     img {
       position: relative;
+      transition: transform 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: translate(rem(-10), 0px);
+        }
+        &::before {
+          filter: brightness(94%);
+        }
+      }
     }
   }
 }
@@ -685,6 +698,7 @@
 
     background: #e8f0f3;
     border-radius: rem(3);
+    pointer-events: none;
   }
 
   &__title {
@@ -758,7 +772,7 @@
     line-height: 140%;
 
     color: #272727;
-
+    pointer-events: none;
     span {
       font-size: rem(24);
       font-weight: 600;
@@ -836,6 +850,12 @@
     line-height: 140%;
     white-space: nowrap;
     color: #306678;
+    transition: color 0.2s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #f08235;
+      }
+    }
   }
 }
 
@@ -856,6 +876,7 @@
   &__inner {
     display: flex;
     align-items: center;
+    min-height: rem(40);
   }
 
   &__color {
@@ -890,6 +911,13 @@
       border: 1px solid #e5e5e5;
       border-radius: 0px 2px 2px 0px;
     }
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        height: rem(40);
+        border-radius: rem(2);
+      }
+    }
   }
 }
 
@@ -916,6 +944,7 @@
   }
 
   &__item {
+    cursor: pointer;
     border: 1px dashed #e5e5e5;
     border-radius: rem(5);
     padding: rem(6) rem(14);
@@ -937,14 +966,24 @@
         color: $color-white;
       }
     }
+
+    @media (any-hover: hover) {
+      &:hover {
+        & .product-sizes__icon {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   &__icon {
     opacity: 0;
     color: #ffb887;
+    transition: opacity 0.3s ease 0s;
     &::before {
       font-size: rem(10);
     }
+    pointer-events: none;
   }
 
   &__value {
@@ -952,6 +991,7 @@
     font-size: rem(14);
     line-height: 140%;
     color: #000000;
+    pointer-events: none;
   }
 
   &__price {
@@ -960,12 +1000,18 @@
     font-size: rem(16);
     line-height: 140%;
     color: #272727;
+    pointer-events: none;
   }
   &__all {
     font-size: rem(14);
     line-height: 140%;
 
     color: #818181;
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -996,6 +1042,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      transition: background 0.3s ease 0s;
     }
     span {
       font-family: $fontSecond;
@@ -1008,6 +1055,18 @@
     }
     img {
       position: relative;
+      transition: transform 0.3s ease 0s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: translate(rem(-10), 0px);
+        }
+        &::before {
+          background: #255363;
+        }
+      }
     }
   }
 
@@ -1054,6 +1113,12 @@
     @media (max-width: em(382)) {
       padding: rem(13) rem(10);
     }
+    transition: box-shadow 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 4px 4px 8px 0px rgba(160, 87, 4, 0.2);
+      }
+    }
   }
   &__buttons {
     display: flex;
@@ -1065,6 +1130,13 @@
     width: rem(50);
     background: rgba(255, 223, 197, 0.66);
     border-radius: rem(5);
+
+    transition: box-shadow 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 4px 4px 8px 0px rgba(160, 87, 4, 0.2);
+      }
+    }
   }
 
   &__share {
@@ -1072,6 +1144,12 @@
     width: rem(48);
     border: 1px solid #000000;
     border-radius: 5px;
+    transition: box-shadow 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: 4px 4px 8px 0px rgba(44, 46, 47, 0.2);
+      }
+    }
   }
 
   &__questions {
@@ -1202,6 +1280,14 @@
     line-height: 140%;
     padding: rem(5) rem(5);
     color: #818181;
+
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #cf6e2b;
+      }
+    }
   }
 }
 
@@ -1322,7 +1408,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    @include adpv('gap', 1, 58, 20);
+    @include adpv('gap', 1, 58, 18);
     overflow-x: auto;
   }
 
@@ -1344,6 +1430,16 @@
       border-bottom: 2px solid black;
     }
     position: relative;
+    transition: color 0.2s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #cf6e2b;
+
+        &._tab-active {
+          color: #272727;
+        }
+      }
+    }
 
     span {
       position: absolute;
