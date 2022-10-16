@@ -137,6 +137,11 @@
       @include adpv('margin-bottom', 1, 20, 12);
     }
   }
+  &__about {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 20, 12);
+    }
+  }
 }
 
 // preview block
@@ -1182,5 +1187,109 @@
     line-height: 140%;
     padding: rem(5) rem(5);
     color: #818181;
+  }
+}
+
+.about-product {
+  &__inner {
+    border: 1px solid #e5e5e5;
+    border-radius: rem(5);
+  }
+
+  &__spollers {
+  }
+
+  &__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid #eeeeee;
+    }
+  }
+
+  &__heading {
+    @include adpv('padding', 1, 18, 12);
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: rem(14);
+    transition: background 0.6s ease 0s;
+    &._spoller-active {
+      background: #f6f6f6;
+    }
+  }
+
+  &__icon {
+    &::before {
+      font-size: rem(17);
+      transform: translate(0px, rem(2));
+    }
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    text-align: left;
+    line-height: 140%;
+    @include adpv('font-size', 1, 16, 14);
+    color: #272727;
+  }
+
+  &__icon-arrow {
+    &::before {
+      transition: transform 0.3s ease 0s;
+      font-size: rem(10);
+      transform: translate(0px, rem(7));
+      ._spoller-active & {
+        transform: translate(0px, rem(7)) rotate(180deg);
+      }
+    }
+  }
+
+  &__body {
+    @include adpv('padding', 1, 18, 12);
+    padding-top: rem(6);
+    transition: background 0.3s ease 0s;
+
+    background: #f6f6f6;
+  }
+
+  &__text {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+    font-size: rem(14);
+    line-height: 140%;
+
+    color: #5f5f5f;
+  }
+
+  &__address {
+    span {
+      font-weight: 700;
+    }
+    font-size: rem(14);
+    line-height: 140%;
+
+    color: #272727;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__time-work {
+    span {
+      font-size: rem(14);
+      line-height: 140%;
+
+      color: #272727;
+    }
+    a {
+      color: #f08235;
+      font-weight: 500;
+      @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
