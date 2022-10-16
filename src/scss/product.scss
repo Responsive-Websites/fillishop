@@ -1,6 +1,9 @@
 .page {
   &__product-block {
     @include adpv('margin-top', 1, 48, 26);
+    &:not(:last-child) {
+      margin-bottom: rem(36);
+    }
   }
 }
 .product-block {
@@ -10,13 +13,16 @@
     @media (min-width: $tablet) {
       display: none;
     }
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+    }
   }
   &__inner {
     display: grid;
 
-    @include adpv('gap', 1, 84, 20);
+    @include adpv('gap', 1, 86, 20);
     @media (min-width: $tablet) {
-      grid-template-columns: minmax(rem(400), 1fr) minmax(rem(300), rem(514));
+      grid-template-columns: minmax(rem(500), 1fr) minmax(rem(300), rem(514));
     }
   }
 
@@ -325,6 +331,10 @@
   height: rem(551);
   border: rem(1) solid #e5e5e5;
   border-radius: rem(7);
+
+  @media (max-width: em(380)) {
+    height: rem(450);
+  }
   &__slider {
     height: 100% !important;
   }
