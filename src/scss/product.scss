@@ -15,6 +15,15 @@
       @include adpv('margin-bottom', 1, 50, 38);
     }
   }
+  &__product-banner {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 40, 20);
+    }
+  }
+  &__product-comments {
+  }
+  &__product-decor {
+  }
 }
 .product-block {
   &__container {
@@ -1597,5 +1606,67 @@
   }
 
   &__slider {
+  }
+}
+
+// banner styles
+
+.product-banner {
+  &__container {
+    @media (max-width: $pc) {
+      padding: 0px;
+    }
+  }
+
+  &__inner {
+    @include adpv('height', 1, 450, 230);
+    position: relative;
+  }
+
+  &__image {
+  }
+}
+
+// decor block styles
+
+.product-decor {
+  &__inner {
+    @include adpv('padding-top', 1, 90, 34);
+    @include adpv('padding-bottom', 1, 55, 30);
+  }
+
+  &__container {
+  }
+
+  &__heading {
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+    max-width: rem(404);
+
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $fontSecond;
+    font-weight: 700;
+    font-size: rem(48);
+    line-height: 140%;
+    text-transform: uppercase;
+    color: #272727;
+    text-align: center;
+    @include adpv('font-size', 1, 48, 34);
+  }
+
+  &__text {
+    max-width: rem(404);
+    text-align: center;
+    margin: 0 auto;
+
+    font-size: rem(16);
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    @include adpv('font-size', 1, 16, 13);
   }
 }
