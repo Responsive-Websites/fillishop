@@ -10,6 +10,11 @@
       @include adpv('margin-bottom', 1, 64, 38);
     }
   }
+  &__product-products {
+    &:not(:last-child) {
+      @include adpv('margin-bottom', 1, 50, 38);
+    }
+  }
 }
 .product-block {
   &__container {
@@ -1570,5 +1575,27 @@
       display: block;
       width: calc(100% - rem(30));
     }
+  }
+}
+
+// more product slider
+
+.more-products {
+  &__container {
+    &_slider {
+      @media (max-width: $pc) {
+        padding: 0px;
+      }
+    }
+  }
+
+  &__heading {
+    margin-bottom: rem(20);
+  }
+
+  &__title {
+  }
+
+  &__slider {
   }
 }
